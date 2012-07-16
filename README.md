@@ -13,3 +13,9 @@
 As long as your checkout is kept clean, you can easily update, rebase your local changes and update submodules with:
 
     cd ~/.vim && git pull --rebase ; git submodule update ; cd -
+
+# Optional Extras
+
+See the `support/` directory for optional extras and installation instructions. Currently: 
+
+* support/tmux: adds auto-saving support when running in tmux
