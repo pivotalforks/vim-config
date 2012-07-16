@@ -2,8 +2,9 @@
 
 (Re)move ~/.vim and ~/.vimrc if you have them already, and run:
 
-    git clone git@github.com:pivotal/vim-config.git ~/.vim
+    mkdir -p ~/.vim
     cd ~/.vim
+    git clone git://github.com/pivotal/vim-config.git .
     git submodule update --init
     ln -s ~/.vim/vimrc ~/.vimrc
 
