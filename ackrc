@@ -1,0 +1,6 @@
+--type-set=handlebars=.handlebars
+--type-set=haml=.haml
+--type-set=scss=.scss
+
+--ignore-dir=tmp
+--ignore-dir=public

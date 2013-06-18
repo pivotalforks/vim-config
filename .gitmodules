@@ -44,7 +44,7 @@
 	ignore = dirty
 [submodule "bundle/command-t"]
 	path = bundle/command-t
-	url = git://git.wincent.com/command-t.git
+	url = git://github.com/wincent/Command-T.git
 	ignore = dirty
 [submodule "bundle/vim-abolish"]
 	path = bundle/vim-abolish
@@ -95,7 +95,7 @@
 	ignore = dirty
 [submodule "bundle/vim-slim"]
 	path = bundle/vim-slim
-	url = git://github.com/bbommarito/vim-slim.git
+	url = git://github.com/slim-template/vim-slim.git
 [submodule "bundle/gundo"]
 	path = bundle/gundo
 	url = https://github.com/sjl/gundo.vim.git
@@ -117,3 +117,63 @@
 [submodule "bundle/vim-tomorrow-theme"]
 	path = bundle/vim-tomorrow-theme
 	url = https://github.com/chriskempson/vim-tomorrow-theme.git
+[submodule "bundle/ag.vim"]
+	path = bundle/ag.vim
+	url = https://github.com/epmatsw/ag.vim.git
+[submodule "bundle/vim-coffee-script"]
+	path = bundle/vim-coffee-script
+	url = https://github.com/kchmck/vim-coffee-script.git
+[submodule "bundle/hammer.vim"]
+	path = bundle/hammer.vim
+	url = https://github.com/matthias-guenther/hammer.vim.git
+[submodule "bundle/auto-pairs"]
+	path = bundle/auto-pairs
+	url = https://github.com/jiangmiao/auto-pairs.git
+[submodule "bundle/vim-colors-candycode"]
+	path = bundle/vim-colors-candycode
+	url = https://github.com/vim-scripts/candycode.vim.git
+[submodule "bundle/vim-colors-sampler"]
+	path = bundle/vim-colors-sampler
+	url = https://github.com/vim-scripts/Color-Sampler-Pack.git
+[submodule "bundle/enhancedjumps"]
+	path = bundle/enhancedjumps
+	url = https://github.com/vim-scripts/EnhancedJumps.git
+[submodule "bundle/test_server"]
+	path = bundle/test_server
+	url = https://github.com/camelpunch/test_server.git
+[submodule "bundle/diffthese"]
+	path = bundle/diffthese
+	url = https://github.com/matt-royal/diffthese.git
+[submodule "bundle/vim-powerline"]
+	path = bundle/vim-powerline
+	url = https://github.com/Lokaltog/vim-powerline.git
+[submodule "bundle/supertab"]
+	path = bundle/supertab
+	url = git://github.com/ervandew/supertab.git
+[submodule "bundle/mustache"]
+	path = bundle/mustache
+	url = git://github.com/juvenn/mustache.vim.git
+[submodule "bundle/vim-cucumber-align-pipes"]
+	path = bundle/vim-cucumber-align-pipes
+	url = git://github.com/quentindecock/vim-cucumber-align-pipes.git
+[submodule "bundle/j-split"]
+	path = bundle/j-split
+	url = git://github.com/mgamba/j-split.git
+[submodule "bundle/ZoomWin"]
+	path = bundle/ZoomWin
+	url = https://github.com/vim-scripts/ZoomWin.git
+[submodule "bundle/vim-blockle"]
+	path = bundle/vim-blockle
+	url = git://github.com/jgdavey/vim-blockle.git
+[submodule "bundle/camelcasemotion"]
+	path = bundle/camelcasemotion
+	url = https://github.com/vim-scripts/camelcasemotion.git
+[submodule "bundle/vim-gitgutter"]
+	path = bundle/vim-gitgutter
+	url = https://github.com/airblade/vim-gitgutter.git
+[submodule "bundle/tagbar"]
+	path = bundle/tagbar
+	url = https://github.com/majutsushi/tagbar.git
+[submodule "bundle/edit-plus"]
+	path = bundle/edit-plus
+	url = https://github.com/mgamba/edit-plus.git
