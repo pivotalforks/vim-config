@@ -1,8 +1,10 @@
-set guifont=Menlo:h18
+set guifont=Menlo:h14
 set guioptions-=T               " Remove GUI toolbar
 set guioptions-=e               " Use text tab bar, not GUI
 set guioptions-=rL              " Remove scrollbars
+set guicursor=a:blinkon0        " Turn off the blinking cursor
 set visualbell                  " Suppress audio/visual error bell
+
 set notimeout                   " No command timeout
 set showcmd                     " Show typed command prefixes while waiting for operator
 set mouse=a                     " Use mouse support in XTerm/iTerm.
@@ -22,11 +24,7 @@ set wildignore+=public/images/**   " ...Also images.
 set wildignore+=vendor/**          " ...Also vendor.
 
 set list                        " Show whitespace
-if has("gui_running")
-  set listchars=trail:·
-else
-  set listchars=trail:~
-endif
+set listchars=trail:·
 
 set showmatch                   " Show matching brackets
 set hidden                      " Allow hidden, unsaved buffers
@@ -35,16 +33,6 @@ set splitbelow                  " ... and bottom
 set wildmode=list:longest       " Bash-like tab completion
 set scrolloff=3                 " Scroll when the cursor is 3 lines from edge
 set cursorline                  " Highlight current line
-
-" More detailed status line
-set statusline=[%n]\ %f\ %m\ %y
-set statusline+=%{fugitive#statusline()} " Show git details"
-set statusline+=%{exists('g:loaded_rvm')?rvm#statusline():''} " Show RVM details"
-set statusline+=%w              " [Preview]
-set statusline+=%=              " Left/right separator
-set statusline+=%c,             " Cursor column
-set statusline+=%l/%L           " Cursor line/total lines
-set statusline+=\ %P            " Percent through file
 
 set laststatus=2                " Always show statusline
 
@@ -66,6 +54,8 @@ nnoremap <silent> <Space> :nohlsearch<Bar>:echo<CR>""
 " Write all writeable buffers when changing buffers or losing focus.
 set autowriteall                " Save when doing various buffer-switching things.
 autocmd BufLeave,FocusLost * silent! wall  " Save anytime we leave a buffer or MacVim loses focus.
+
+let g:sql_type_default="postgresql"
 
 " Turn off ri tooltips that don't work with Ruby 1.9 yet
 " http://code.google.com/p/macvim/issues/detail?id=342
