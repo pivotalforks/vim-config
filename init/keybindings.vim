@@ -4,8 +4,15 @@
 let mapleader = ","
 let maplocalleader = ";"
 
-" kj - The intuitive way to get out of insert mode
-imap kj         <Esc>
+" Gracefully handle holding shift too long after : for common commands
+cabbrev W w
+cabbrev Q q
+cabbrev Wq wq
+cabbrev Tabe tabe
+cabbrev Tabc tabc
+
+"set pastetoggle keybinding
+set pastetoggle=<F2>
 
 " Make Y consistent with D and C
 map Y           y$
@@ -39,7 +46,7 @@ map <D-Z>       :later 1<CR>
 
 " Auto-indent whole file
 nmap <leader>=  gg=G``
-map <silent> <F7> gg=G``:echo "Reformatted."<CR>
+map <silent> <F7> gg=G`` :delmarks z<CR>:echo "Reformatted."<CR>
 
 " Jump to a new line in insert mode
 imap <D-CR>     <Esc>o
@@ -68,22 +75,26 @@ vmap <s-tab> <gv
 
 " FuzzyFinder and switchback commands
 map <leader>e   :e#<CR>
-map <leader>b   :FufBuffer<CR>
+map <leader>bb   :FufBuffer<CR>
 map <leader><C-N> :FufFile **/<CR>
 map <D-e> :FufBuffer<CR>
 map <leader>n :FufFile **/<CR>
 map <D-N> :FufFile **/<CR>
 
-" refresh the FuzzyFinder cache
-map <leader>rf :FufRenewCache<CR>
+" Tab in insert mode should just indent
+autocmd VimEnter * iunmap <tab>
 
 " Command-T
 map <D-N>       :CommandTFlush<CR>:CommandT<CR>
-map <leader>f   :CommandTFlush<CR>:CommandT<CR>
+map <leader>F   :CommandTFlush<CR>:CommandT<CR>
+map <leader>f   :CommandT<CR>
 
-" ctags with rails load path
-map <leader>rt  :!rails runner 'puts $LOAD_PATH.join(" ")' \| xargs /usr/local/bin/ctags -R public/javascripts<CR>
-map <leader>T   :!rails runner 'puts $LOAD_PATH.join(" ")' \| xargs rdoc -f tags<CR>
+" ctags again with gemhome added
+map <leader>rt :!/usr/local/bin/ctags -R --exclude=.git --exclude=log * `rvm gemhome`/*<CR>
+map <leader>rT :!rdoc -f tags -o tags * `rvm gemhome` --exclude=.git --exclude=log
+
+" Control P
+let g:ctrlp_cmd = 'CtrlPMRU'
 
 " Git blame
 map <leader>g   :Gblame<CR>
@@ -99,6 +110,20 @@ cmap <C-A> <C-B>
 " Copy current file path to system pasteboard
 map <silent> <D-C> :let @* = expand("%")<CR>:echo "Copied: ".expand("%")<CR>
 map <leader>C :let @* = expand("%").":".line(".")<CR>:echo "Copied: ".expand("%").":".line(".")<CR>
+
+" Run tests
+map <leader>t :wa<CR>:RunTestLine<CR>
+map <leader>T :wa<CR>:RunTest<CR>
+map <leader>tt :wa<CR>:RunTestAgain<CR>
+
+map <F12> :write<CR>:RunTest<CR>
+imap <F12> <ESC><F12>
+map <F11> :write<CR>:RunTestLine<CR>
+imap <F11> <ESC><F11>
+map <F10> :write<CR>:RunTestAgain<CR>
+imap <F10> <ESC><F10>
+map <F9> :write<CR>:RunTestPrevious<CR>
+imap <F9> <ESC><F9>
 
 " Disable middle mouse button, F1
 map <MiddleMouse>   <Nop>

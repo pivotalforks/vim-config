@@ -1,7 +1,7 @@
 # To Install
 (Re)move ~/.vim and ~/.vimrc if you have them already, and run:
 
-    git clone git://github.com/pivotal/vim-config.git ~/.vim
+    git clone git://github.com/pivotalcommon/vim-config.git ~/.vim
     cd ~/.vim
     git submodule update --init
     ln -s ~/.vim/vimrc ~/.vimrc
@@ -12,7 +12,12 @@ see the README at [https://github.com/pivotal/tmux-config](https://github.com/pi
     
 # Compile command-t
 
-    rvm system #ensure build on Ruby 1.8.7 if using RVM
+If using RVM or rbenv, make sure to build on system Ruby 1.8.7:
+
+`$ rvm system` or `$ rbenv shell system`
+
+Then:
+
     cd ~/.vim/bundle/command-t
     bundle
     rake make
@@ -21,3 +26,10 @@ see the README at [https://github.com/pivotal/tmux-config](https://github.com/pi
 As long as your checkout is kept clean, you can easily update, rebase your local changes and update submodules with:
 
     cd ~/.vim && git pull --rebase ; git submodule update ; cd -
+    
+## Bumping plugin versions to latest
+Git submodule update will give you the checked in versions for all the plugins, you can bump up the versions with:
+
+    git submodule foreach git co master && git pull
+    
+You can also commit the bumped versions and submit a pull request if you'd like.

@@ -1,0 +1,1 @@
+command CC CoffeeCompile vert

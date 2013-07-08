@@ -13,25 +13,18 @@
 " come first or last, like Pathogen and sourcing the machine-local config.
 " Instead, add it to one of the files in .vim/init, or create a new one.
 
+set nocompatible
 
-" Pathogen (This must happen first.)
-" --------
+execute pathogen#infect()
 
-filetype off                    " Avoid a Vim/Pathogen bug
-call pathogen#helptags()
-call pathogen#runtime_append_all_bundles()
-
-set nocompatible                " Don't maintain compatibility with vi
-syntax on                       " Highlight known syntaxes
+syntax on
 filetype plugin indent on
-
-
-" Source initialization files
-" ---------------------------
 
 runtime! init/**.vim
 
+if filereadable($HOME . "/.vimrc.local")
+  source ~/.vimrc.local
+endif
 
-" Machine-local vim settings - keep this at the end
-" --------------------------
-silent! source ~/.vimrc.local
+au BufRead,BufNewFile *.hamlc set ft=haml
+
