@@ -95,7 +95,7 @@
 	ignore = dirty
 [submodule "bundle/vim-slim"]
 	path = bundle/vim-slim
-	url = git://github.com/bbommarito/vim-slim.git
+	url = git://github.com/slim-template/vim-slim.git
 [submodule "bundle/gundo"]
 	path = bundle/gundo
 	url = https://github.com/sjl/gundo.vim.git
